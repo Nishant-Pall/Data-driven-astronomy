@@ -7,6 +7,7 @@ def load_fits(file):
     '''
     This function works on a flattened (or ravelled) array, i.e. the array gets
     converted to a 1D array internally before the maximum is found.
+    And the max_pos returned is rather a single digit instead of (x,y) co-ordinate
     To revert this, or to "unravel" the result, we can call the function unravel_index
     and pass it the dimension of the initial data array as second argument.
     '''
