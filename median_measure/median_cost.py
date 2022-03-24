@@ -11,15 +11,17 @@ def median_fits(filenames):
         hdulist = fits.open(filename)
         FITS_list.append(hdulist[0].data)
         hdulist.close()
-
+    # Stack image arrays in 3D array for median calculation
     FITS_stack = np.dstack(FITS_list)
     median = np.median(FITS_stack, axis=2)
+    # Calculate the memory consumed by the data
     memory = FITS_stack.nbytes
 
     memory /= 1024
 
     stop = time.time() - start   # stop timer
     return median, stop, memory
+
 
     # You can use this to test your function.
     # Any code inside this `if` statement will be ignored by the automarker.
