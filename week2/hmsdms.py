@@ -7,8 +7,9 @@ def hms2dec(h, m, s):
 
 def dms2dec(h, m, s):
     if(h < 0):
-        h = -h
-    ans = (h + (m/60) + (s/3600))
+        ans = -1*(-h + (m/60) + (s/3600))
+    else:
+        ans = h + (m/60) + (s/3600)
     return ans
 
 
